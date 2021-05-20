@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/addlecture.css" rel="stylesheet">
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px; margin:0px 10px;">
+        <a id="back-button" class="main-button">Back</a>
+        <div class="header">
+            <h2>Add Lecture</h2>   
+        </div>
+        <div style="padding-top:20px;text-align:center">
+            <form onsubmit="return addLecture()">
+                <select id="subject_id" required>
+                    <option value="">Select Subject</option>
+                </select>
+                <br><br>
+                <input type="text" id="lecture_topic" placeholder="Enter Lacture topic">
+                <br><br>
+                <input type="url" id="lecture_url" placeholder="Enter Lacture url">
+                <br><br>
+                <textarea id="lecture_description" placeholder="Enter lacture description" rows="5"></textarea>
+                <br><br>
+                <input type="submit" id="addlecture-submit" class="main-button" value="Add Lecture">
+            </form>
+        </div>
+    </div>
+    <div class="edit-container" id="edit-teachers">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-teachers');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div class="edit-container" id="edit-students">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-students');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/add-lecture.js"></script>
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+    </script>
+</body>
+</html>

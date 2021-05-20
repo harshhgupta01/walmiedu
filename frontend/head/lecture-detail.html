@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Head Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/lecturedetail.css" rel="stylesheet">
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+        Notiflix.Block.Init
+        (
+            {
+                svgSize:"100px",
+                messageFontSize:"20px",
+                messageColor:"#2f3bd0",
+                svgColor:"#2f3bd0", 
+            }
+        ); 
+    </script>
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px; margin:0px 10px;">
+        <a href="" id="back_button" class="main-button">Back</a>
+        <div class="header">
+            <div class="header-class-detail">
+                <div class="header-class-title">
+                    <h2 style="float:left" id="header_subject_name">Subject</h2>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+            <div class="header-classteacher-details">
+                <p id="header_subjectteacher_name">Subject Teacher</p>
+                <p id="header_subjectteacher_email">Mail ID</p>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="padding-top:20px;text-align:center">
+            <h2 class="enrolled-heading">Delivered Lectures</h2>
+            <div class="block" id="lecture-list">
+                <script>
+                    Notiflix.Block.Standard('#lecture-list','Loading...');
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="edit-container" id="edit-subjectteacher">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-subjectteacher');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div class="edit-container" id="edit-lecture">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-lecture');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/lecture-detail.js"></script>
+</body>
+</html>

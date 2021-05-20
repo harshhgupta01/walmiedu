@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script>
+        var params = new URLSearchParams(location.search);
+        var token = params.get('token');
+
+        function loginAdmin()
+        {
+            var otp = document.getElementById("otp").value;
+            //post
+            data = 
+            {
+                "otp": otp,
+                "token": token
+            }
+            fetch(apiUrl+'/admin/resetPassword',
+            {
+                mode: 'cors',
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: 
+                {
+                    'Content-Type': 'application/json',
+                    'Connection': 'keep-alive'
+                },
+            }).then((e) => 
+            {
+                    return e.json()
+            }).then((e) =>  
+            {
+                console.log(e);
+                if(e.error)
+                {
+                    Notiflix.Report.Failure('ERROR',e.error,'OK');
+                }
+                else
+                {
+                    Notiflix.Report.Success('SUCCESS',e.message,'OK',function(){
+                        window.open("newpassword.html?token="+token,"_self"); 
+                    });
+                }
+            }) 
+            return false;
+        }
+        function setCookie(cname, cvalue, exdays) 
+        {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+    </script>
+</head>
+
+<body style="background-image: url(images/study1.jpg);">
+    <div class="login-wrap" style="background-image: url(images/study.jpg);">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Enter OTP</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <form class="login-form" onsubmit="return loginAdmin()">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="otp" class="label">OTP</label>
+                        <input id="otp" type="text" class="input" data-type="OTP" required>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Next">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script src="js/main2.js"></script>
+</body>
+
+</html>

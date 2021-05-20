@@ -1,0 +1,42 @@
+POST http://localhost:3000/admin
+Content-Type: application/json
+
+{
+    "type": "Security",
+    "position": "dasdasd"
+}
+
+###
+
+POST http://localhost:3000/form
+Content-Type: application/json
+{
+    "name" : "Harry Potter",
+    "email" : "harry@hogwarts",
+}
+
+###
+
+POST http://localhost:3000/admin/
+Content-Type:  application/json
+
+{
+    "email" : "divyansh@gmail.com",
+    "password" : "divyansh"
+}
+
+###
+
+POST http://localhost:3000/admin/vacancy/new
+Content-Type: application/json
+{
+    "type" : "test1",
+    "position" : "test1"
+}
+###
+
+GET http://localhost:3000/admin/vacancy
+
+### 
+
+GET http://localhost:3000/admin/vacancy/delete/1

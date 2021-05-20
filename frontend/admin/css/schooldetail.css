@@ -1,0 +1,90 @@
+.header
+{
+    margin:10px 0px;
+}
+.header-school-name
+{
+    max-width: 50%;
+    float: left;
+}
+.header-school-strength
+{
+    float: right;
+    font-weight: 300;
+}
+.enrolled-class-heading
+{
+    font-weight: 300;
+}
+.head-details
+{
+    text-align: left;
+    width: calc(60% - 40px);
+    padding: 10px 20px;
+    background-color: var(--secondary-div-bg);
+    margin: 30px auto;
+    position: relative;
+    border-radius: 5px;
+}
+.edit-head-details-button
+{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--navbar-bg);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.block
+{
+    width: 92%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.card
+{
+    position: relative;
+    font-size:1em;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+    background-color:var(--navbar-bg);
+    color: var(--text-color);
+    border-radius:3px;
+    width: 180px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 20px 0px;
+    text-align: center;
+    text-decoration: none;
+}
+.card:hover
+{
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px)
+{
+    .head-details
+    {
+        width: calc(80% - 40px);
+    }
+    .card
+    {
+        width: 120px;
+    }
+    .header
+    {
+        text-align: center;
+    }
+    .header-school-name
+    {
+        max-width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+    .header-school-strength
+    {
+        float: none;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Student Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/watchlecture.css" rel="stylesheet">
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+        Notiflix.Block.Init
+        (
+            {
+                svgSize:"100px",
+                messageFontSize:"20px",
+                messageColor:"#2f3bd0",
+                svgColor:"#2f3bd0", 
+            }
+        ); 
+    </script>
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px; margin:0px 10px;">
+        <div class="header">
+            <div class="header-lecture-detail">
+                <div class="header-lecture-title">
+                    <h2 style="float:left" id="header_lecture">Lecture topic</h2>
+                    <!--<p style="float:right" id="header_subject">Subject</p>-->
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+        <div class="video-container">
+            <center>
+                <iframe id="vimeo_video" width="100%" class="embade-video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </center>
+        </div>
+    </div>
+    <div class="edit-container" id="edit-teachers">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-teachers');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div class="edit-container" id="edit-students">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-students');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/watchlecture.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>

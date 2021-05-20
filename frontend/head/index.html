@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Head Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/homepage.css" rel="stylesheet">
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+        Notiflix.Block.Init
+        (
+            {
+                svgSize:"100px",
+                messageFontSize:"20px",
+                messageColor:"#2f3bd0",
+                svgColor:"#2f3bd0", 
+            }
+        ); 
+    </script>
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px;text-align:center">
+        <div>
+            <h1>HEAD PANEL</h1>
+            <div class="border-below-heading"></div>
+        </div>
+        <div style="padding-top:20px;text-align:center" id="ajax-container">
+            <div class="block" id="class-list">
+                <script>
+                    Notiflix.Block.Standard('#class-list','Loading...');
+                </script>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>

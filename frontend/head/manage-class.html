@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Head Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/manageclass.css" rel="stylesheet">
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+        Notiflix.Block.Init
+        (
+            {
+                svgSize:"100px",
+                messageFontSize:"20px",
+                messageColor:"#2f3bd0",
+                svgColor:"#2f3bd0", 
+            }
+        ); 
+    </script>
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px; margin:0px 10px;">
+        <div class="header">
+            <div>
+                <h1>ADD Class</h1>
+                <div class="border-below-heading"></div>
+            </div>     
+        </div>
+        <div style="padding-top:20px;text-align:center">
+            <form onsubmit="return addClass()">
+                <input id="class_name" type="text" placeholder="Enter class name" required>
+                <br><br>
+                <select id="class_teacher_id" required>
+                    <option value="">Select Class Teacher</option>
+                </select>
+                <br><br>
+                <input id="addclass-submit" type="submit" class="main-button" value="Add Class">
+            </form>
+        </div>
+        
+        <br><br>
+        <h2 class="enrolled-heading">Enrolled Classes</h2>
+        <div class="block" id="class-list">
+            <script>
+                Notiflix.Block.Standard('#class-list','Loading...');
+            </script>
+        </div>
+    </div>
+    <div class="edit-container" id="edit-teacher">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-teacher');">&#10060;</h3>
+        <form onsubmit="return updateClassDetails()">
+            <input type="hidden" id="form_class_id">
+            <input type="text" id="form_class_name" placeholder="Enter the Class Name" required>
+            <br><br>
+            <select id="form_class_teacher_id" required>
+                <option value="">Select Class Teacher</option>
+            </select>
+            <br><br>
+            <input class="main-button" type="submit" id="form-updateclass-submit" value="Update">
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/manage-class.js"></script>
+</body>
+</html>

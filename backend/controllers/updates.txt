@@ -1,0 +1,47 @@
+    Admin Panel
+Add validation checks while input                                                   Done
+Check the length of the input using multiple if statements                          Done
+Count the strength of each school in admin panel                                    Done
+Make ID's more complicated
+Sort viewSchools by name                                                            Done
+Strength of each class in each school                                               Done
+Strength of each school                                                             Done
+Update head details                                                                 Done
+
+Display class details
+    School name
+    Class name
+    Strength
+    Enrolled Teachers
+    Enrolled Students
+
+view teacher details for each class                                                 Done
+Edit teacher details                                                                Done
+Edit Student details                                                                Done
+View Students in each class                                                         Done
+Add lecture description to lecture model                                            Done
+Check if the class exists before adding the lecture                                 Done
+
+
+
+
+Remove Section from class                                                           Done
+
+
+
+
+
+
+
+Add phone to teacher model
+Change error.message to error.errors[0].ValidationErrorItem.message
+
+
+/viewClasses
+Class name
+Class teacher ID
+class ID
+class teacher name
+strength
+
+create routes for opening classes 

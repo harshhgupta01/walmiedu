@@ -1,0 +1,98 @@
+.embade-video
+{
+    margin: 20px 0px;
+    overflow: hidden;
+    width: 60%;
+    height: 500px;
+}
+@media screen and (max-width: 900px)
+{
+    .embade-video
+    {
+        width: 90%;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .embade-video
+    {
+        width: 90%;
+        height: 300px;
+    }
+}
+.header
+{
+    margin:10px 0px;
+    text-align:center;
+}
+
+.block
+{
+    width: 92%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.card
+{
+    position: relative;
+    font-size:1em;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+    background-color:var(--secondary-div-bg);
+    border-radius:3px;
+    flex: calc(30% - 24px);
+    max-width: calc(30% - 64px);
+    margin: 20px 12px;
+    padding: 0px 20px;
+    text-decoration: none;
+}
+.card:hover
+{
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+    .delete-details-button
+    {
+        position: absolute;
+        color: var(--navbar-bg);
+        text-transform: uppercase;
+        cursor: pointer;
+        right: 20px;
+        bottom: 0px;
+    }
+    .edit-details-button
+    {
+        position: absolute;
+        color: var(--navbar-bg);
+        text-transform: uppercase;
+        cursor: pointer;
+        left: 20px;
+        bottom: 0px;
+    }
+@media screen and (max-width: 900px)
+{
+    .block
+    {
+        width: 95%;
+    }
+    .card
+    {
+        flex: calc(45% - 20px);
+        max-width: calc(45% - 20px);
+        margin: 10px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .block
+    {
+        width: 95%;
+    }
+    .card
+    {
+        flex: calc(95% - 20px);
+        max-width: calc(95% - 20px);
+        margin: 10px;
+    }
+}

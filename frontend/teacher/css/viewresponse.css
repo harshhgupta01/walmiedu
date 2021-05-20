@@ -1,0 +1,154 @@
+.header
+{
+    margin:10px 0px;
+}
+.header-class-detail
+{
+    width: 40%;
+    float: left;
+    font-weight: 300;
+}
+    .header-class-title
+    {
+        width: calc(100% - 40px);
+        padding: 10px 20px;
+        background-color: var(--navbar-bg);
+        color: var(--text-color);
+    }
+.header-classteacher-details
+{
+    background-color: transparent;
+    width: calc(40% - 20px);
+    padding: 0px 10px;
+    float: right;
+    position: relative;
+    text-align: center;
+}
+.enrolled-heading
+{
+    font-weight: 300;
+}   
+
+.block
+{
+    width: 92%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.card
+{
+    position: relative;
+    font-size:1em;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+    background-color:var(--secondary-div-bg);
+    border-radius:3px;
+    flex: calc(30% - 24px);
+    max-width: calc(30% - 64px);
+    margin: 20px 12px;
+    padding: 0px 20px;
+    text-decoration: none;
+    text-align: left;
+}
+.card:hover
+{
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+    .edit-details-button
+    {
+        position: absolute;
+        color: var(--navbar-bg);
+        text-transform: uppercase;
+        cursor: pointer;
+        right: 20px;
+        bottom: 0px;
+    }
+    .view-details-button
+    {
+        position: absolute;
+        color: var(--navbar-bg);
+        text-transform: uppercase;
+        cursor: pointer;
+        left: 20px;
+        bottom: 0px;
+    }
+@media screen and (max-width: 900px)
+{
+    .block
+    {
+        width: 95%;
+    }
+    .card
+    {
+        flex: calc(45% - 20px);
+        max-width: calc(45% - 20px);
+        margin: 10px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .block
+    {
+        width: 95%;
+    }
+    .card
+    {
+        flex: calc(95% - 20px);
+        max-width: calc(95% - 20px);
+        margin: 10px;
+    }
+    .head-details
+    {
+        width: calc(80% - 40px);
+    }
+    .header
+    {
+        text-align: center;
+    }
+    .header-class-detail
+    {
+        width: 100%;
+        float: none;
+    }
+    .header-classteacher-details
+    {
+        margin: auto;
+        width: calc(90% - 20px);
+        float: none;
+    }
+}
+
+
+input, select, textarea, label
+{
+    width: calc(60% - 20px);
+    background-color: var(--secondary-div-bg);
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+select
+{
+    width: 60%;
+}
+input[type="submit"]
+{
+    padding: 10px 40px;
+    width: auto;
+}
+@media screen and (max-width: 600px)
+{
+    input, select, textarea, label
+    {
+        width: calc(90% - 20px);
+        background-color: var(--secondary-div-bg);
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+    select
+    {
+        width: 90%;
+    }
+}

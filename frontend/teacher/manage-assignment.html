@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Teacher Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/manageassignment.css" rel="stylesheet">
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+        Notiflix.Block.Init
+        (
+            {
+                svgSize:"100px",
+                messageFontSize:"20px",
+                messageColor:"#2f3bd0",
+                svgColor:"#2f3bd0", 
+            }
+        ); 
+    </script>
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px; margin:0px 10px;">
+        <a id="back-button" class="main-button">Back</a>
+        <div class="header">
+            <div>
+                <h1>ADD Assignment</h1>
+                <div class="border-below-heading"></div>
+            </div>     
+        </div>
+        <div style="padding-top:20px;text-align:center">
+            <form onsubmit="return addAssignment()" encType="multipart/form-data" ref="notes_form" id="notes_form">
+                <input id="subject_id" name="subject_id" type="hidden" placeholder="Enter subject id">
+                <input id="notes_topic" name="title" type="text" placeholder="Enter Assignment topic" required>
+                <br><br>
+                <input id="notes_file" name="file" type="file" required>
+                <br><br>
+                <input id="submission_date" name="submission_date" type="date" required>
+                <br><br>
+                <input id="addfile-submit" type="submit" class="main-button" value="Post Assignment" >
+            </form>
+            <br><br>
+            <h2 class="enrolled-heading">Provided Assignment</h2>
+            <div class="block" id="notes-list">
+                <script>
+                    Notiflix.Block.Standard('#notes-list','Loading...');
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="edit-container" id="edit-assignment">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-assignment');">&#10060;</h3>
+        <form onsubmit="return updateAssignment()">
+            <input type="hidden" id="form_assignment_id">
+            <input id="form_title" name="title" type="text" placeholder="Enter Assignment topic" required>
+            <br><br>
+            <input id="form_submission_date" name="submission_date" type="date" required>
+            <br><br>
+            <input type="submit" id="form-updateclass-submit" value="Update">
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/manage-assignment.js"></script>
+</body>
+</html>

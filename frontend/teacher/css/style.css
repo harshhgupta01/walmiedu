@@ -1,0 +1,134 @@
+:root 
+{
+    --navbar-bg: #2f3bd0;
+    --text-color: #fff;
+    --button-bg: #444ed5;
+    --button-hover: #262ea6;
+    --secondary-div-bg: #f2f2f2;
+}
+body
+{   
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+h1,h2,h3,h4
+{
+    margin: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.border-below-heading
+{
+    margin: auto;
+    width: 150px;
+    border-bottom: 3px solid var(--navbar-bg);
+}
+.main-button
+{
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.main-button:hover
+{
+    background-color: var(--button-hover);
+}
+.dark-button
+{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 7px 30px;
+    text-decoration: none;
+}
+.dark-button:hover
+{
+    background-color: rgb(0,0,0);
+}
+
+.edit-container
+{
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: calc(100% + 50px);
+    overflow-y: scroll;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.close-edit-container
+{
+    position: absolute;
+    top:70px;
+    right: 20px;
+    color: white;
+    cursor: pointer;
+}
+.edit-container::-webkit-scrollbar
+{
+    width: 2px;
+}
+.edit-container::-webkit-scrollbar-track 
+{
+    background: var(--text-color);
+}
+.edit-container::-webkit-scrollbar-thumb 
+{
+    background: var(--button-hover);
+}
+
+.edit-container form
+{
+    width: 100%;
+    margin: auto;
+}
+.edit-container input, .edit-container select, .edit-container textarea
+{
+    width: calc(60% - 20px);
+    background-color: var(--secondary-div-bg);
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin-left: calc(20% - 0px);
+}
+.edit-container select
+{
+    margin-left: calc(20% - 0px);
+    width: 60%;
+}
+.edit-container input[type="submit"]
+{
+    padding: 10px 40px;
+    width: auto;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+}
+.edit-container input[type="submit"]:hover
+{
+    background-color: var(--button-hover);
+}
+@media screen and (max-width: 600px)
+{
+    .edit-container input, .edit-container select, .edit-container textarea
+    {
+        width: calc(90% - 20px);
+        background-color: var(--secondary-div-bg);
+        padding: 10px;
+        border: none;
+        outline: none;
+        margin-left: calc(5% - 0px);
+    }
+    .edit-container select
+    {
+        width: 90%;
+        margin-left: calc(5% - 0px);
+    }
+}

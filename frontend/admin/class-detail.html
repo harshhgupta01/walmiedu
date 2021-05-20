@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/classdetail.css" rel="stylesheet">
+    <script src="js/notiflix-aio-2.3.2.min.js"></script>
+    <script>
+         Notiflix.Confirm.Init
+         (
+             { 
+                 titleColor:"#0f0e0e",
+                 okButtonBackground:"#0c0c0c",
+                 borderRadius:"10px"
+             }
+         ); 
+        Notiflix.Block.Init
+        (
+            {
+                svgSize:"80px",
+                messageFontSize:"20px",
+                messageColor:"#2f3bd0",
+                svgColor:"#2f3bd0", 
+            }
+        ); 
+    </script>
+</head>
+
+<body>
+    <div include-html="include/nav.html" class="includefile"></div>
+    <div style="padding-top:70px; margin:0px 10px;">
+        <a onclick="window.open('school-detail.html?school_id='+schoolId, '_self')" class="main-button">Back</a>
+        <div class="header">
+            <h2 id="header_school_name" class="header-school-name">School Name</h2>
+            <div class="header-class-detail">
+                <div class="header-class-title">
+                    <h2 id="header_class_name" style="float:left">10</h2>
+                    <h2 id="header_class_strength" style="float:right;font-weight:300">Strength</h2>
+                    <div style="clear:both"></div>
+                </div>
+                <div style="margin-top: 10px; display:flex; justify-content: space-between">
+                    <a id="editlecture-button" class="main-button" style="font-weight:300">
+                        Edit Lectures
+                    </a>
+                    <a id="addlecture-button" class="main-button">
+                        Add Lectures
+                    </a>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="padding-top:20px;text-align:center">
+            <h2 class="enrolled-heading">Subject</h2>
+            <div class="block" id="subject-list">
+                <script>
+                    Notiflix.Block.Standard('#subject-list','Loading...');
+                </script>
+            </div>
+            <h2 class="enrolled-heading">Enrolled Students</h2>
+            <div class="block" id="student-list">
+                <script>
+                    Notiflix.Block.Standard('#student-list','Loading...');
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="edit-container" id="edit-teachers">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-teachers');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <div class="edit-container" id="edit-students">
+        <h3 class='close-edit-container' onclick="hideEditContainer('edit-students');">&#10060;</h3>
+        <form>
+            <input type="text" id="service" placeholder="Enter the Service Name" required>
+            <br><br>
+            <textarea rows="5" id="servicedesc" placeholder="Enter the Service description" required></textarea>
+            <br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/class-detail.js"></script>
+</body>
+</html>

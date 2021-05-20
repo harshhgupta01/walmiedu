@@ -1,0 +1,49 @@
+.header
+{
+    margin:10px 0px;
+    text-align:center;
+}
+    .header-description 
+    {
+        width: calc(50% - 40px);
+        margin:auto;
+        padding: 10px 20px;
+        background-color: var(--navbar-bg);
+        color: var(--text-color);
+    }
+input, select, textarea
+{
+    width: calc(60% - 20px);
+    background-color: var(--secondary-div-bg);
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+select
+{
+    width: 60%;
+}
+input[type="submit"]
+{
+    padding: 10px 40px;
+    width: auto;
+}
+@media screen and (max-width: 600px)
+{
+    .header-description 
+    {
+        width: calc(80% - 40px);
+    }
+    input, select, textarea
+    {
+        width: calc(90% - 20px);
+        background-color: var(--secondary-div-bg);
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+    select
+    {
+        width: 90%;
+    }
+}
